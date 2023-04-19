@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
 
 export class Feedback extends Component {
   state = {
@@ -7,21 +6,32 @@ export class Feedback extends Component {
     neutral: 0,
     bad: 0,
   };
-  handleIncrementGood() {
+  handleIncrementGood = () => {
     console.log('i`ll by back');
-  }
-  handleIncrementNeutral() {
+  };
+  handleIncrementNeutral = () => {
     console.log('i`ll by back');
-  }
-  handleIncrementBad() {
+  };
+  handleIncrementBad = () => {
     console.log('i`ll by back');
-  }
+  };
   render() {
     const { step } = this.props;
 
     return (
       <div>
-        <span>0</span>
+        <span>
+          Good:
+          <span>{this.state.good}</span>
+        </span>
+        <span>
+          Neutral:
+          <span>{this.state.neutral}</span>
+        </span>
+        <span>
+          Bad:
+          <span>{this.state.bad}</span>
+        </span>
         <button type="button" onClick={this.handleIncrementGood}>
           Good {step}
         </button>
@@ -35,5 +45,3 @@ export class Feedback extends Component {
     );
   }
 }
-
-// ReactDOM.render(<Feedback step={5} />, document.getElementById('root'));
