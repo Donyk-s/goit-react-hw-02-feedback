@@ -7,14 +7,27 @@ export class Feedback extends Component {
     bad: 0,
   };
   handleIncrementGood = () => {
-    console.log('i`ll by back');
+    this.setState(prevState => {
+      return {
+        good: prevState.good + 1,
+      };
+    });
   };
   handleIncrementNeutral = () => {
-    console.log('i`ll by back');
+    this.setState(prevState => {
+      return {
+        neutral: prevState.neutral + 1,
+      };
+    });
   };
   handleIncrementBad = () => {
-    console.log('i`ll by back');
+    this.setState(prevState => {
+      return {
+        bad: prevState.bad + 1,
+      };
+    });
   };
+
   render() {
     const { step } = this.props;
 
