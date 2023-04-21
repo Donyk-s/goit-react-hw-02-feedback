@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import React from 'react';
 export const Feedback = ({
   options,
@@ -32,4 +34,13 @@ export const Feedback = ({
       </ul>
     </div>
   );
+};
+Feedback.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  totalFeedback: PropTypes.number.isRequired,
+  positiveFeedbackPercentage: PropTypes.number.isRequired,
 };
