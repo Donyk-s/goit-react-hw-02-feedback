@@ -1,60 +1,35 @@
-import React, { Component } from 'react';
-
-export class Feedback extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
-  handleIncrementGood = () => {
-    this.setState(prevState => {
-      return {
-        good: prevState.good + 1,
-      };
-    });
-  };
-  handleIncrementNeutral = () => {
-    this.setState(prevState => {
-      return {
-        neutral: prevState.neutral + 1,
-      };
-    });
-  };
-  handleIncrementBad = () => {
-    this.setState(prevState => {
-      return {
-        bad: prevState.bad + 1,
-      };
-    });
-  };
-
-  render() {
-    const { step } = this.props;
-
-    return (
+import React from 'react';
+export const Feedback = ({
+  options,
+  onLeaveFeedback,
+  good,
+  neutral,
+  bad,
+  totalFeedback,
+  positiveFeedbackPercentage,
+}) => {
+  return (
+    <div>
+      <h2>Please leave only positive reviews &#129488;</h2>
       <div>
-        <span>
-          Good:
-          <span>{this.state.good}</span>
-        </span>
-        <span>
-          Neutral:
-          <span>{this.state.neutral}</span>
-        </span>
-        <span>
-          Bad:
-          <span>{this.state.bad}</span>
-        </span>
-        <button type="button" onClick={this.handleIncrementGood}>
-          Good {step}
-        </button>
-        <button type="button" onClick={this.handleIncrementNeutral}>
-          Neutral {step}
-        </button>
-        <button type="button" onClick={this.handleIncrementBad}>
-          Bad {step}
-        </button>
+        {options.map(option => (
+          <button
+            key={option}
+            type="button"
+            onClick={() => onLeaveFeedback(option)}
+          >
+            {option}
+          </button>
+        ))}
       </div>
-    );
-  }
-}
+      <h3>Statistics:</h3>
+      <ul>
+        <li>Good: {good}</li>
+        <li>Neutral: {neutral}</li>
+        <li>Bad: {bad}</li>
+        <li>Total: {totalFeedback}</li>
+        <li>Positive feedback: {positiveFeedbackPercentage}%</li>
+      </ul>
+    </div>
+  );
+};
