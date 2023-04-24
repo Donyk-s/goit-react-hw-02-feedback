@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import css from './Feedback.module.css';
-console.log(css);
+
 export const Feedback = ({
   options,
   onLeaveFeedback,
