@@ -9,18 +9,18 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <div>
-      <span className={css.good}>
+    <div className={css.block}>
+      <span>
         Good:
-        <span className={css.colorGood}>{good}</span>
+        <span>{good}</span>
       </span>
-      <span className={css.neutral}>
+      <span>
         Neutral:
-        <span className={css.colorNeutral}>{neutral}</span>
+        <span>{neutral}</span>
       </span>
-      <span className={css.bad}>
+      <span>
         Bad:
-        <span className={css.colorBad}>{bad}</span>
+        <span>{bad}</span>
       </span>
       <div>Total feedback: {total}</div>
       <div>Positive feedback percentage: {positivePercentage}%</div>

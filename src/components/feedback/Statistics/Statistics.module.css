@@ -1,7 +1,4 @@
-.good {
-  color: green;
-  font-size: 18px;
-}
-.colorGood {
-  color: blueviolet;
+.block {
+  display: flex;
+  flex-direction: column;
 }

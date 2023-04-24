@@ -21,7 +21,17 @@ export class App extends Component {
       Math.round((good / totalFeedback) * 100) || 0;
 
     return (
-      <div>
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 40,
+          color: '#010101',
+        }}
+      >
         <h1>Please leave only positive reviews &#129488;</h1>
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
